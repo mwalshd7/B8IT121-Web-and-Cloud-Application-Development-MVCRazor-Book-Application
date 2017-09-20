@@ -1,0 +1,48 @@
+﻿@model BooksApp.Models.Book
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Styles.css" />
+</head>
+<body>
+    <div>
+         
+        @using (Html.BeginForm("Save", "Book", FormMethod.Post))
+        {
+            <div class="colour">@Html.ValidationSummary()</div>
+            <h2>Add a Book Record</h2>
+            <div class="space">
+                @Html.LabelFor(b => b.ISBN)
+                <p>@Html.TextBoxFor(b => b.ISBN)</p>
+                           </div>
+                <div class="space">
+                    @Html.LabelFor(b => b.Title)
+                  <p>@Html.TextBoxFor(b => b.Title)</p>
+               </div>
+            <div class="space">
+                @Html.LabelFor(b => b.Publisher)
+                <p>@Html.TextBoxFor(b => b.Publisher)</p>
+            </div>
+            <div class="space">
+                @Html.LabelFor(b => b.DatePublished)
+                <p>@Html.TextBoxFor(b => b.DatePublished)</p>
+            </div>
+            <div class="space">
+                @Html.LabelFor(b => b.Price)
+                <p>@Html.TextBoxFor(b => b.Price)</p>
+            </div>
+            <div>
+                <input id="Submit1" type="submit" value="Submit" />
+                <input id="Reset1" type="reset" value="Clear" />
+            </div>
+        }
+    </div>
+</body>
+</html>
